@@ -1,22 +1,3 @@
-//const manu = document.querySelector(".left")
-//console.log(manu.innerHTML)
-//let jj = document.querySelector("body")
-//console.log(jj.style.backgroundColor)
-
-
-//let message = document.querySelector(".message");
-//console.log(message.textContent);
-//message.textContent = "C'est le moments";
-//console.log(message.textContent);
-//fonction pour générer le nombre
-
-//RECUPERATION SCORE
-//let scoreElemment = document.querySelector(".score");
-//let score = Number(scoreElemment.textContent)
-//console.log(score);
-
-
-
 //déclaration de fonction
 
         function generateRandomNumber() {
@@ -29,11 +10,11 @@
         //console.log(randomNumber);
 
 
-//recupération de la valeur saisir par l'utilisateur
+//recupération du button check
 
         const check = document.querySelector(".check")
 
-//console.log(check)
+        //console.log(check)
 
         check.addEventListener("click", valeurInput)
 
@@ -42,40 +23,37 @@
         let convertInput = Number(guess)
         //console.log(convertInput)
 
-      if(convertInput < randomNumber) {
+       if(convertInput < randomNumber) {
 
-//console.log("TROP PETIT")
+      //recupération de la valeur actuelle de la variable message
 
         let message = document.querySelector(".message");
 
-//console.log(message.textContent);
+      //changement du message
 
         message.textContent = "TOO LOW !";
         
-      } else if (convertInput > randomNumber){
+        } else if (convertInput > randomNumber){
 
-//console.log("TROP PETIT")
+      //changement du message à nouveau
 
         let message = document.querySelector(".message");
-
-//console.log(message.textContent);
 
         message.textContent = "TOO HIGHT!";
 
-//console.log(message.textContent);
+        //console.log(message.textContent);
         
 
-      } else{
-
-//console.log("TROP PETIT")
+        } else{
 
         let message = document.querySelector(".message");
     
-//console.log(message.textContent);
 
         message.textContent = "GREAT, YOU WIN !";
-//console.log(message.textContent);
-              }
+        
+        //console.log(message.textContent);
+
+        }
 
               if (convertInput < randomNumber || convertInput > randomNumber ){
 
@@ -94,25 +72,35 @@
 //changement de couleur pour passer au vert
           let body = document.body;
           let bgColor = getComputedStyle(body).backgroundColor;
-//console.log(bgColor);
+        //console.log(bgColor);
           body.style.backgroundColor = "green";
 
 //changement de point d'interrogation en nombre
+//RECUPERATION DU POINT D'INTERROGATION
           let pntInterrogationElement = document.querySelector(".number");
-//console.log(pntInterrogationElement.textContent)
+
+        //console.log(pntInterrogationElement.textContent)
+
+        //RECUPERATION DU NOMBRE DEVINER
+
           let pntnumber = convertInput;
-//console.log(pntnumber)
+          //console.log(pntnumber)
+
+        //CHANGEMENT DE LA POINT EN NOMBRE DEVINE
           pntInterrogationElement.textContent = pntnumber;
 
         }      
 
+        
+        
+        
         //changement du message en : VOUS AVEZ PERDU
 
 
               let numArret = document.querySelector(".score").innerHTML;
-        //console.log(numArret);
+              //console.log(numArret);
               convtNumArret = Number(numArret);
-        //console.log(typeof(convtNumArret));
+              //console.log(typeof(convtNumArret));
 
               
               if (convtNumArret <= 1 ) {     
@@ -131,12 +119,14 @@
 
 //recuperer le bouton again 
 
-     /* const again = document.querySelector(".again")
-      again.addEventListener("click", function(){
-        location.reload();
-      })*/
+        /* const again = document.querySelector(".again")
+         again.addEventListener("click", function(){
+         location.reload(); })*/
 
         const again = document.querySelector(".again");
+
+
+//appliquer un evenement
 
         again.addEventListener("click", actuPage)
         let recupPoint = document.querySelector(".number").innerHTML;
@@ -144,10 +134,7 @@
         let recupText = document.querySelector(".message").innerHTML;
 
 
-        /*let bodyTo = document.body;
-        let recupColor = getComputedStyle(bodyTo).backgroundColor;
-        console.log(recupColor);*/
-        
+//declaration de la fonction qui s'exécute quand le click est faire sur again
         
         function actuPage(){
 
@@ -158,30 +145,13 @@
           let pointInterrogationChange = document.querySelector(".number").innerHTML = recupPoint;
           let initScore = document.querySelector(".score").innerHTML = recupScore;
           let initText = document.querySelector(".message").innerHTML = recupText;
-
-          
-    
         }
+
+//NOUVEAU EVENEMENT POUR CHANGER LA COULEUR 
+
         again.addEventListener("click", function(){
           document.body.style.backgroundColor = '#222';
         })
-
-
-       
-       /* let numArret = document.querySelector(".score").innerHTML;
-        console.log(numArret);
-        convtNumArret = Number(numArret);
-        console.log(typeof(convtNumArret));
-
-        if (convtNumArret < 1 ) {
-
-          let recupMess = document.querySelector(".message");
-              recupMess.innerHTML = "Vous avez perdu !"
-
-        }  */ 
-
-
-
 
 
 
